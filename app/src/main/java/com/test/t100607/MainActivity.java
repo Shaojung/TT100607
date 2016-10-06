@@ -5,6 +5,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,4 +39,13 @@ public class MainActivity extends AppCompatActivity {
         });
         builder.show();
     }
+    public void click2(View v)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("這是對話框");
+        EditText ed = new EditText(MainActivity.this);
+        builder.setView(ed);
+        builder.show();
+    }
+
 }
