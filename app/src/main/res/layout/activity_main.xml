@@ -54,4 +54,14 @@
         android:layout_toEndOf="@+id/button4"
         android:layout_marginStart="19dp"
         android:id="@+id/textView" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button4"
+        android:layout_alignStart="@+id/button4"
+        android:layout_marginTop="10dp"
+        android:id="@+id/button5"
+        android:onClick="click5" />
 </RelativeLayout>
