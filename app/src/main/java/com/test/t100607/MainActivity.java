@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle("這是對話框");
 
         final String drinks[] = {"汽水", "可樂", "果汁", "紅茶"};
-
+        final boolean tmp[] = chk.clone();
         builder.setMultiChoiceItems(drinks, chk, new DialogInterface.OnMultiChoiceClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which, boolean isChecked) {
@@ -132,6 +132,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 tv.setText(s);
+            }
+        });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                chk = tmp;
             }
         });
 
