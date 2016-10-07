@@ -4,8 +4,10 @@ import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -148,7 +150,19 @@ public class MainActivity extends AppCompatActivity {
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("這是自訂對話框");
-        builder.setView(R.layout.mydialog);
+        LayoutInflater inflater = getLayoutInflater();
+        View myView = inflater.inflate(R.layout.mydialog, null);
+
+        Button btn = (Button) myView.findViewById(R.id.button6);
+        final TextView tv2 = (TextView) myView.findViewById(R.id.textView2);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv2.setText("Hello Hello");
+            }
+        });
+
+        builder.setView(myView);
 
 
         builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
